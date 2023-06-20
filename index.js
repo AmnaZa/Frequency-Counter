@@ -1,3 +1,28 @@
+const maxChar = (str) => {
+  // creates a new object for use later
+  let counter = {}
+  // splits the string given to us into an array usable by our function
+  const arr = str.split('')
+  // loops over the array we created
+  for (let i = 0; i < arr.length; i++) {
+    // if the counter object includes the current value being looped over
+    if (Object.keys(counter).includes(arr[i])) {
+      // adds one to the counter
+      counter[arr[i]] += 1
+      // if it does not include the current value being looped over
+    } else {
+      // creates a new key with the value of 1
+      counter[arr[i]] = 1
+    }
+  }
+  return counter
+}
+
+
+console.log(maxChar('hello'));
+console.log(maxChar('Today is fantastic!'));
+
+
 // --- Directions
 // Check to see if two provided strings are anagrams of eachother.
 // One string is an anagram of another if it uses the same characters
